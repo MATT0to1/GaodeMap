@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>高德地图标注示例</title>
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=e3b9404feffb39c1429c6e233fe9efbf"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            center: [116.397428, 39.90923], // 初始化地图中心点
+            zoom: 5 // 初始化地图级别
+        });
+
+        // 创建标注图层
+        var markers = new AMap.MarkerLayer();
+        map.add(markers);
+
+        // 添加标注数据
+        var markerData = [
+            {
+                position: [116.397428, 39.90923],
+                title: '北京天安门'
+            },
+            {
+                position: [121.472644, 31.231706],
+                title: '上海外滩'
+            },
+            // 添加更多标注数据...
+        ];
+
+        // 批量添加标注
+        markers.add(markerData);
+    </script>
+</body>
+</html>
